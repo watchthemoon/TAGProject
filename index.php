@@ -36,7 +36,7 @@
 		<nav>
 		<ul>
 			<li><a href="index.php" class="navknop">Home</a></li>
-			<li><a href="categories.html" class="navknop">Overzicht</a></li>
+			<li><a href="overzicht.php" class="navknop">Overzicht</a></li>
 			<li><a href="aanmelden.html" class="navknop">Over T.A.G.</a></li>
 		</ul>
 		</nav>
@@ -46,24 +46,24 @@
 <div class="intro">
 </div>
 <div class="content">
-	<div class="button">
+	<a class="button">
 	<img src="assets/images/fruit.png">
 		<div class="tekst">
 		Fruit
 		</div>
-	</div>
-	<div class="button2">
+	</a>
+	<a class="button2">
 		<img src="assets/images/groenten.png">
 		<div class="tekst">
 		Groenten	
 		</div>
-	</div>
-	<div class="button3">
+	</a>
+	<a class="button3">
 		<img src="assets/images/producten.png">
 		<div class="tekst">
 		Producten	
 		</div>
-	</div>
+	</a>
 	<div class="clear"></div>
 </div>
 <div class="popsection">
@@ -118,7 +118,6 @@
 				{		 ?>
 		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
 		<p class="prodtitel"><?php echo $s['titel'] ?></p>
-		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
 	</a>
 	<?php $i++;} ?>
 	<div class="clear"></div>

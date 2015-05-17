@@ -1,9 +1,4 @@
-<?php 
-	include_once("classes/Product.class.php");
-	include_once("classes/FotoProduct.class.php");
-	$prd = new Product();
-
- ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,6 +14,8 @@
 </head>
 
 <body>
+
+
 <div class="website">
 <header>
 	<div class="head">
@@ -45,86 +42,50 @@
 	</div>
 </section>
 <section class="contain">
-<div class="intro">
-</div>
 <div class="content">
-	<div class="button">
-	<img src="assets/images/fruit.png">
-		<div class="tekst">
-		Fruit
-		</div>
+	<div class="imageproduct">
+		<img src="assets/images/appel.jpg" alt="appels">
 	</div>
-	<div class="button2">
-		<img src="assets/images/groenten.png">
-		<div class="tekst">
-		Groenten	
-		</div>
-	</div>
-	<div class="button3">
-		<img src="assets/images/producten.png">
-		<div class="tekst">
-		Producten	
-		</div>
+	<div class="detailproduct">
+		<h2>Appels</h2>
+		<p>Antwerpen</p>
+		<div class="beschrijving">Het is een knapperige, ietwat kegelvormige harde appel. De appels zijn vrij groot, de grondkleur is groengeel, terwijl er een helder- tot donkerrode, soms iets gestreepte dekkleur aanwezig is.</div>
+		<a href="" class="button4">Map</a>
+		<a href="" class="button4">Afspraak</a>
 	</div>
 	<div class="clear"></div>
 </div>
-<div class="popsection">
-	<h2>Populaire producten</h2>
-		<?php $result = $prd->getPopProducten();
-				$number = $result->num_rows;
-				$i = 1;
-				while($s = $result->fetch_assoc())
-				{
-					
-					$fto = new FotoProduct();
-					$url = $fto->getFotoProduct($s['productid']);
-				if($i < $number){
-					$str = "product";
-				}else{
-					$str = "productp";
-				}
-				
-			 ?>
-	<div class="<?php echo $str ?>">
-	<?php 		
-	while($u = $url->fetch_assoc())
-				{		 ?>
-		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
-		<p class="prodtitel"><?php echo $s['titel'] ?></p>
-		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
+<div class="overeenkomen">
+<h3>Overeenkomende producten</h3>
+	<div class="overproduct">
+		<img src="assets/images/appel.jpg">
+		<p class="prodtitel">Appels</p>
+		<p class="prodstad">Antwerpen</p>
+		<div class="clear"></div>
 	</div>
-	<?php $i++;} ?>
+	<div class="overproduct">
+		<img src="assets/images/carrots.jpg">
+		<p class="prodtitel">Wortelen</p>
+		<p class="prodstad">Mortsel</p>
+	</div>
+		<div class="overproduct">
+		<img src="assets/images/appel.jpg">
+		<p class="prodtitel">Appels</p>
+		<p class="prodstad">Antwerpen</p>
+		<div class="clear"></div>
+	</div>
+	<div class="overproduct">
+		<img src="assets/images/carrots.jpg">
+		<p class="prodtitel">Wortelen</p>
+		<p class="prodstad">Mortsel</p>
+	</div>
+	<div class="overproductp">
+		<img src="assets/images/eggs.jpg">
+		<p class="prodtitel">Eieren</p>
+		<p class="prodstad">Ekeren</p>
+	</div>
 	<div class="clear"></div>
-	
-	</div>
-	<div class="nieuwsection">
-	<h2>Producten van de maand</h2>
-			<?php $result = $prd->getPopProducten();
-				$number = $result->num_rows;
-				$i = 1;
-				while($s = $result->fetch_assoc())
-				{
-					
-					$fto = new FotoProduct();
-					$url = $fto->getFotoProduct($s['productid']);
-				if($i < $number){
-					$str = "product";
-				}else{
-					$str = "productp";
-				}
-				
-			 ?>
-	<div class="<?php echo $str ?>">
-	<?php 		
-	while($u = $url->fetch_assoc())
-				{		 ?>
-		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
-		<p class="prodtitel"><?php echo $s['titel'] ?></p>
-		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
-	</div>
-	<?php $i++;} ?>
-	<div class="clear"></div>
-	</div>
+</div>
 </section>
 <div class="push"></div>
 </div>

@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+	include_once("classes/Product.class.php");
+	include_once("classes/FotoProduct.class.php");
+	$prd = new Product(); 
+	$id=$_REQUEST['id'];
+ ?><!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,8 +13,6 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/lightbox.min.js"></script>
-<link href="assets/css/lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 </head>
 
@@ -31,59 +34,69 @@
 </header>
 <section class="sectionmenu">
 	<div class="headmenu">
-	<a href="index.html"><img src="assets/img/logo.png" alt="TAG"></a>
+	<a href="index.php"><img src="assets/img/logo.png" alt="TAG"></a>
 		<nav>
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="categories.html">Overzicht</a></li>
-			<li><a href="aanmelden.html">Over T.A.G.</a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="categories.php">Overzicht</a></li>
+			<li><a href="aanmelden.php">Over T.A.G.</a></li>
 		</ul>
 		</nav>
 	</div>
 </section>
 <section class="contain">
 <div class="content">
+<?php $result = $prd->getProductDetail($id);
+				while($s = $result->fetch_assoc())
+				{
+					
+					$fto = new FotoProduct();
+					$url = $fto->getFotoProduct($id);
+				
+			 ?>
 	<div class="imageproduct">
-		<img src="assets/images/appel.jpg" alt="appels">
+		<?php 		
+	while($u = $url->fetch_assoc())
+				{		 ?>
+		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
 	</div>
 	<div class="detailproduct">
-		<h2>Appels</h2>
-		<p>Antwerpen</p>
-		<div class="beschrijving">Het is een knapperige, ietwat kegelvormige harde appel. De appels zijn vrij groot, de grondkleur is groengeel, terwijl er een helder- tot donkerrode, soms iets gestreepte dekkleur aanwezig is.</div>
+		<h2><?php echo $s['titel'] ?></h2>
+		<p><?php echo $s['gemeente'] ?></p>
+		<div class="beschrijving"><?php echo $s['beschrijving'] ?>.</div>
 		<a href="" class="button4">Map</a>
 		<a href="" class="button4">Afspraak</a>
 	</div>
 	<div class="clear"></div>
+	<?php } ?>
 </div>
 <div class="overeenkomen">
 <h3>Overeenkomende producten</h3>
-	<div class="overproduct">
-		<img src="assets/images/appel.jpg">
-		<p class="prodtitel">Appels</p>
-		<p class="prodstad">Antwerpen</p>
+<?php $result = $prd->getMaandProducten();
+				$number = $result->num_rows;
+				$i = 1;
+				while($s = $result->fetch_assoc())
+				{
+					
+					$fto = new FotoProduct();
+					$url = $fto->getFotoProduct($s['productid']);
+				if($i < $number){
+					$str = "overproduct";
+				}else{
+					$str = "overproductp";
+				}
+				
+			 ?>
+	<a class="<?php echo $str ?>" href="detail.php?id=<?php echo $s['productid']?>">
+	<?php 		
+	while($u = $url->fetch_assoc())
+				{		 ?>
+		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
+		<p class="prodtitel"><?php echo $s['titel'] ?></p>
+		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
 		<div class="clear"></div>
-	</div>
-	<div class="overproduct">
-		<img src="assets/images/carrots.jpg">
-		<p class="prodtitel">Wortelen</p>
-		<p class="prodstad">Mortsel</p>
-	</div>
-		<div class="overproduct">
-		<img src="assets/images/appel.jpg">
-		<p class="prodtitel">Appels</p>
-		<p class="prodstad">Antwerpen</p>
-		<div class="clear"></div>
-	</div>
-	<div class="overproduct">
-		<img src="assets/images/carrots.jpg">
-		<p class="prodtitel">Wortelen</p>
-		<p class="prodstad">Mortsel</p>
-	</div>
-	<div class="overproductp">
-		<img src="assets/images/eggs.jpg">
-		<p class="prodtitel">Eieren</p>
-		<p class="prodstad">Ekeren</p>
-	</div>
+	</a>
+	<?php $i++;} ?>
 	<div class="clear"></div>
 </div>
 </section>

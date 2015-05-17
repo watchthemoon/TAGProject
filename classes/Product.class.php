@@ -91,12 +91,24 @@ class Product{
 		{
 			$db = new Db();
 			$query = "SELECT * FROM product ORDER BY productid LIMIT 3";
-
-			 $result = $db->conn->query($query);
-			 return $result;
-
-
+			 return $db->conn->query($query);
 		}
+
+	public function getMaandProducten()
+		{
+			$db = new Db();
+			$query = "SELECT * FROM product ORDER BY titel LIMIT 3";
+			 return $db->conn->query($query);
+		}	
+
+	public function getProductDetail($id)
+		{
+			$db = new Db();
+			$query = "SELECT * FROM product WHERE productid ='".$db->conn->real_escape_string($id)."' LIMIT 1";
+			return $db->conn->query($query);
+		}		
+
+
 
 
 }

@@ -13,8 +13,6 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/lightbox.min.js"></script>
-<link href="assets/css/lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 </head>
 
@@ -34,12 +32,12 @@
 </header>
 <section class="sectionmenu">
 	<div class="headmenu">
-	<a href="index.html"><img src="assets/img/logo.png" alt="TAG"></a>
+	<a href="index.php"><img src="assets/img/logo.png" alt="TAG"></a>
 		<nav>
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="categories.html">Overzicht</a></li>
-			<li><a href="aanmelden.html">Over T.A.G.</a></li>
+			<li><a href="index.php" class="navknop">Home</a></li>
+			<li><a href="categories.html" class="navknop">Overzicht</a></li>
+			<li><a href="aanmelden.html" class="navknop">Over T.A.G.</a></li>
 		</ul>
 		</nav>
 	</div>
@@ -85,21 +83,21 @@
 				}
 				
 			 ?>
-	<div class="<?php echo $str ?>">
+	<a class="<?php echo $str ?>" href="detail.php?id=<?php echo $s['productid']?>">
 	<?php 		
 	while($u = $url->fetch_assoc())
 				{		 ?>
 		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
 		<p class="prodtitel"><?php echo $s['titel'] ?></p>
 		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
-	</div>
+	</a>
 	<?php $i++;} ?>
 	<div class="clear"></div>
 	
 	</div>
 	<div class="nieuwsection">
 	<h2>Producten van de maand</h2>
-			<?php $result = $prd->getPopProducten();
+			<?php $result = $prd->getMaandProducten();
 				$number = $result->num_rows;
 				$i = 1;
 				while($s = $result->fetch_assoc())
@@ -114,14 +112,14 @@
 				}
 				
 			 ?>
-	<div class="<?php echo $str ?>">
+	<a class="<?php echo $str ?>" href="detail.php?id=<?php echo $s['productid']?>">
 	<?php 		
 	while($u = $url->fetch_assoc())
 				{		 ?>
 		<img src="<?php echo $u['fotourl'] ?>"><?php } ?>
 		<p class="prodtitel"><?php echo $s['titel'] ?></p>
 		<p class="prodstad"><?php echo $s['gemeente'] ?></p>
-	</div>
+	</a>
 	<?php $i++;} ?>
 	<div class="clear"></div>
 	</div>

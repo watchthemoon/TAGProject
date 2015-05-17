@@ -52,7 +52,7 @@ line-height: 50px;
 font-family: 'Nunito', sans-serif;
 }
 
-section a:hover{
+section a.navknop:hover{
 	color:#fdfdff;
 	background-color: #F04503;
 }
@@ -149,7 +149,7 @@ h1{
 h2{
 	font-size: 24px;
 	padding-bottom: 25px;
-	font-weight: normal;
+	font-weight: bold;
 	color: #F04503;
 }
 
@@ -214,6 +214,8 @@ h2{
 	float: left;
 	margin-right: 21px;
 	cursor: pointer;
+	text-decoration: none;
+	color: black;
 }
 
 .product img{
@@ -237,6 +239,8 @@ h2{
 	width: 30%;
 	float: left;
 	cursor: pointer;
+	text-decoration: none;
+	color: black;
 }
 
 .productp img{
@@ -371,6 +375,8 @@ font-size: 12px;
 	float: left;
 	margin-right: 21px;
 	cursor: pointer;
+	text-decoration: none;
+	color: black;
 }
 
 .overproduct img{
@@ -382,6 +388,8 @@ font-size: 12px;
 	float: left;
 	margin-right: 21px;
 	cursor: pointer;
+	text-decoration: none;
+	color: black;
 }
 
 .overproductp img{

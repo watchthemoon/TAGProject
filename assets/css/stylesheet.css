@@ -12,62 +12,71 @@ height: 100%;
 min-height: 100%;
 height: auto !important;
 height: 100%;
-margin: 0 auto -50px;
+margin: 0 auto;
 }
 body{
 	font-family: 'Open Sans', sans-serif;
 }
 
 header{
-	height: 40px;
-	background: #F04503;
+	height: 30px;
+	background: #f6f6d1;
 }
 
 .sectionmenu{
-	border: 1px solid #E7F6D1;
+	border: 1px solid #f6f6d1;
 }
 
-section nav ul {
+.sectionnav{
+	background: #02192E;
+}
+
+.navmenu{
+	max-width:1170px;
+	margin:0 auto;
+	height: 40px;
+}
+
+.sectionnav nav ul {
 list-style: none;
 padding: 0px;
 margin: 0px;
-margin-left: 30px;
-float: right;
+margin-left: 5px;
+float: left;
 margin-right:0px;
-padding-top: 25px;
+margin-top: 5px;
 }
 
 
-section nav ul li {
+.sectionnav nav ul li {
 	display: inline-block;
 }
 
-section nav ul li a {
-padding: 0px 15px;
+.sectionnav nav ul li a {
+padding: 0px 20px;
 display: block;
-color: #F04503;
+color: white;
 text-decoration: none;
-font-size: 24px;
-line-height: 50px;
+font-size: 21px;
 font-family: 'Nunito', sans-serif;
 }
 
 section a.navknop:hover{
 	color:#fdfdff;
-	background-color: #F04503;
+	background-color: #02192E;
 }
 
 .headmenu{
-	width:1200px;
+	max-width:1170px;
 	margin:0 auto;
 	height: 100px;
-	padding-top: 10px;
-  	padding-bottom: 10px;
+	padding-top: 15px;
+  	padding-bottom: 5px;
 }
 
 .head{
 	
-	width:1200px;
+	max-width:1170px;
 	margin:0 auto;
 	height: 50px;
 	text-align: right;
@@ -77,13 +86,19 @@ section a.navknop:hover{
 .inloglink{
 	font-size: 12px;
 	color: white;
+	background-color: #02192E; 
+	padding: 10px 84px;
+	margin-right: 15px;
 }
 
 .navbar-form {
   padding: 0;
-  width: 25%;
   text-align: right;
   float: right;
+   display: inline-block;
+   margin-top: 35px;
+   border: 1px solid #02192E;
+   margin-right: 15px;
 }
 
 .form-control{
@@ -96,7 +111,7 @@ section a.navknop:hover{
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  width: 70%;
+  float: left;
 }
 
 .input-group-addon {
@@ -109,21 +124,28 @@ section a.navknop:hover{
   color: #555;
   text-align: center;
   vertical-align: middle;
-  float: right;
+  float: left;
 }
 
 .headmenu img{
-	height:100px;
+	height:90px;
 	display:block;
 	float:left;
+	padding-left: 15px;
 }
 
-
-
+.title{
+	color: #F04503;
+	font-size: 36px;
+	font-family: 'Nunito', sans-serif;
+	padding-left: 20px;
+	padding-top: 25px;
+	  display: inline-block;
+}
 
 section.contain {
-width: 1200px;
-margin: 20px auto 50px;
+max-width: 1170px;
+margin: 20px auto 20px;
 background: #fdfdff;
 overflow: hidden;
 }
@@ -155,15 +177,21 @@ h2{
 
 .button{
 	float: left;
-	width: 32%;
-	background-color: #749c06;
-	margin-right: 24px;
+	width: 25%;
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
 	margin-top: 20px;
 	cursor: pointer;
 }
 
 .button img{
 	width: 100%;
+	display: block;
+}
+
+.button .tekst{
+	background-color: #749c06;
 }
 
 .tekst{
@@ -176,43 +204,82 @@ h2{
 
 .button2{
 	float: left;
-	width: 32%;
-	background-color: #fbbe14;
+	width: 25%;
+	box-sizing: border-box;
 	margin-top: 20px;
-	margin-right: 24px;
+	padding-right: 15px;
+	padding-left: 15px;
 	cursor: pointer;
 	
 }
 
 .button2 img{
 	width: 100%;
+	display: block;
+}
+
+.button2 .tekst{
+	background-color: #fbbe14;
+}
+
+.buttonkruiden{
+	float: left;
+	width: 25%;
+	box-sizing: border-box;
+	margin-top: 20px;
+	padding-right: 15px;
+	padding-left: 15px;
+	cursor: pointer;
+	
+}
+
+.buttonkruiden img{
+	width: 100%;
+	display: block;
+}
+
+.buttonkruiden .tekst{
+	background-color: #F04503;
 }
 
 .button3{
 	float: left;
-	width: 32%;
-	background-color: #bf0402;
+	width: 25%;
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
 	margin-top: 20px;
 	cursor: pointer;
 }
 
 .button3 img{
 	width: 100%;
+	display: block;
+}
+
+.button3 .tekst{
+	background-color: #bf0402;
 }
 
 .popsection{
 	margin-top: 31px;
-	width: 49%;
+	width: 50%;
 	margin-bottom: 31px;
 	float: left;
-	margin-right: 24px;
+	border
+}
 
+.popsection h2{
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .product{
-	width: 30%;
+	box-sizing: border-box;
+	width: 33.334%;
 	float: left;
-	margin-right: 21px;
+	padding-right: 15px;
+	padding-left: 15px;
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
@@ -233,16 +300,6 @@ h2{
 	margin: 0px;
 }
 
-
-
-.productp{
-	width: 30%;
-	float: left;
-	cursor: pointer;
-	text-decoration: none;
-	color: black;
-}
-
 .productp img{
 	width: 100%;
 }
@@ -253,27 +310,33 @@ h2{
 
 .nieuwsection{
 	margin-top: 31px;
-	width: 49%;
+	width: 50%;
 	margin-bottom: 31px;
 	float: left;
 
 }
 
+.nieuwsection h2{
+	margin-left: 15px;
+	margin-right: 15px;
+}
 
 footer{
-	background: #F04503;
+	background: #02192E;
 	height: 150px;
 	width:100%;
 }
 .footercontent{
-	width: 1200px;
+max-width: 1170px;
 margin: 20px auto 50px;
 }
 
 .footerblock{
+	box-sizing: border-box;
+	width: 33.334%;
 	float: left;
-	width: 32%;
-	margin-right: 24px;
+	padding-right: 15px;
+	padding-left: 15px;
 	margin-top: 24px;
 	color: white;
 }
@@ -287,21 +350,6 @@ font-size: 12px;
 }
 
 .footerblock p{
-font-size: 12px;
-}
-
-.footerblock2{
-	float: left;
-	width: 32%;
-	margin-top: 24px;
-	color: white;
-}
-
-.footerblock2 ul{
-	list-style: none;
-padding: 0px;
-margin: 0px;
-margin-top: 16px;
 font-size: 12px;
 }
 
@@ -396,6 +444,8 @@ font-size: 12px;
 	width: 100%;
 }
 
+/*Overzicht*/
+
 .zoekfilters{
 	float: left;
 	width: 25%;
@@ -423,4 +473,8 @@ font-size: 12px;
 .zoekresultaten{
 	float: right;
 	width: 70%;
+}
+
+.zoekresultaten h2{
+	margin-left: 15px;
 }
